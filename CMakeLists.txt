@@ -56,6 +56,16 @@ add_library(${PROJECT_NAME} SHARED
     src/zeo_col_mpr.c
     src/zeo_col_ph.c
     src/zeo_terra.c)
+target_link_libraries(${PROJECT_NAME} zm zeda)
+
+add_executable(zeo_gjk app/zeo_gjk.c)
+target_link_libraries(zeo_gjk ${PROJECT_NAME})
+
+add_executable(zeo_qhull app/zeo_qhull.c)
+target_link_libraries(zeo_qhull ${PROJECT_NAME})
+
+#add_executable(zeo_terra app/zeo_terra.c)
+#target_link_libraries(zeo_terra ${PROJECT_NAME})
 
 # Install
 INSTALL (
@@ -64,6 +74,12 @@ INSTALL (
     FILES_MATCHING PATTERN "*.h*")
 
 install(TARGETS ${PROJECT_NAME} LIBRARY DESTINATION lib)
+
+install (TARGETS 
+    zeo_gjk
+    zeo_qhull
+    #zeo_terra
+    RUNTIME DESTINATION bin)
 
 install(TARGETS ${PROJECT_NAME}
     EXPORT ${PROJECT_NAME}-export
