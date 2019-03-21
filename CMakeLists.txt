@@ -55,8 +55,7 @@ add_library(${PROJECT_NAME} SHARED
     src/zeo_col_gjk.c
     src/zeo_col_mpr.c
     src/zeo_col_ph.c
-    src/zeo_terra.c
-    )
+    src/zeo_terra.c)
 
 # Install
 INSTALL (
