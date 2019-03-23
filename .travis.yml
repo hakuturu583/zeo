@@ -18,8 +18,9 @@ before_script:
   - sudo cp *.a /usr/lib
   - popd
   - git clone https://github.com/hakuturu583/zeda.git
-  - mkdir zeda/build
+  - mkdir -p zeda/build
   - cd zeda/build && cmake ../ && sudo make install
+  - cd ../../
 script:
   - install -d build
   - cd build
