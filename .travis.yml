@@ -21,6 +21,10 @@ before_script:
   - mkdir -p zeda/build
   - cd zeda/build && cmake ../ && sudo make install
   - cd ../../
+  - git clone https://github.com/hakuturu583/zm.git
+  - mkdir -p zm/build
+  - cd zm/build && cmake ../ && sudo make install
+  - cd ../../
 script:
   - install -d build
   - cd build
